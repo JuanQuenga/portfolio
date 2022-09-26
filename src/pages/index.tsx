@@ -13,11 +13,6 @@ import ToggleThemeButton from "../components/ToggleThemeButton";
 const Home: NextPage = () => {
   return (
     <>
-      <Head>
-        <title>Juan Quenga&apos;s Portfolio</title>
-        <meta name="description" content="Juan Quenga Portfolio" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <div className="fixed right-0 p-2 z-50">
         <ToggleThemeButton />
       </div>
