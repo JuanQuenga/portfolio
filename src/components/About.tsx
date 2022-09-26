@@ -13,10 +13,10 @@ const About = () => {
         className="rounded-3xl object-cover "
       />
       <p className="font-thin text-3xl">
-        I'm a self-taught developer who's love of video games has always pushed
-        me further into the world of programming. From creating small programs
-        in visual basic for early flash games on the web to full on websites and
-        tools for the comumunities I've been a part of.
+        I&apos;m a self-taught developer who&apos;s love of video games has
+        always pushed me further into the world of programming. From creating
+        small programs in visual basic for early flash games on the web to full
+        on websites and tools for the comumunities I&apos;ve been a part of.
       </p>
     </section>
   );
