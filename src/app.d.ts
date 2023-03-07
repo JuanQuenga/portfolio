@@ -7,6 +7,12 @@ declare global {
 		// interface PageData {}
 		// interface Platform {}
 	}
+	namespace svelte.JSX {
+		interface HTMLProps<T> {
+			onenterViewport: (e: CustomEvent) => void;
+			onexitViewport: (e: CustomEvent) => void;
+		}
+	}
 }
 
-export {};
+export { };

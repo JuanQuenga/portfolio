@@ -1,4 +1,5 @@
 <script global>
+	import BackgroundEffect from '$lib/BackgroundEffect.svelte';
 	import '../app.postcss';
 	import Navigation from '../lib/Navigation.svelte';
 </script>
@@ -7,6 +8,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat" rel="stylesheet" />
 </svelte:head>
 
+<BackgroundEffect />
 <Navigation />
 <slot />
 

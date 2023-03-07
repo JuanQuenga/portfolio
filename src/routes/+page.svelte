@@ -1,5 +1,7 @@
 <script lang="ts">
+	import ContactButton from '$lib/ContactButton.svelte';
 	import PageSection from '$lib/PageSection.svelte';
+	import viewport from '../actions/useViewportAction';
 
 	let scrollY: number;
 	let innerHeight: number;
@@ -7,10 +9,8 @@
 </script>
 
 <svelte:window bind:scrollY bind:innerHeight />
-<div
-	class="mx-2 flex h-[calc(100vh-64px)] flex-col overflow-auto border-t border-stone-800 pb-2 align-bottom sm:border-none"
->
-	<div class="w-2/3 flex-grow  text-xl md:text-6xl">
+<div class="flex h-screen flex-col overflow-auto pb-2 pt-[64px] align-bottom md:px-6">
+	<div class="w-full flex-grow bg-cover  text-xl md:w-2/3 md:text-6xl">
 		Empowering businesses using <strong
 			class="bg-gradient-to-r from-rose-400 to-orange-300 px-1 font-extrabold md:px-2"
 			>innovative</strong
@@ -20,12 +20,13 @@
 			>solutions</strong
 		>.
 	</div>
-	<h1
-		class="text-right font-inter text-6xl uppercase text-stone-800 md:text-9xl"
-		style:transform={`translate3d(${-scrollY}px, 0, 0)`}
-	>
-		Juan<br />Quenga
-	</h1>
+	<div class="flex">
+		<div class="flex-grow"><ContactButton /></div>
+		<!-- style:transform={`translate3d(${scrollY}px, 0, 0)`} -->
+		<h1 class="text-right font-inter text-6xl font-medium uppercase text-stone-800 md:text-9xl">
+			Juan<br />Quenga
+		</h1>
+	</div>
 	<div class="flex w-full">
 		<div
 			class="mx-auto mt-2 w-full border-b-2 border-stone-800 p-2 text-center hover:bg-stone-800 hover:text-stone-200"
@@ -46,10 +47,15 @@
 		</div>
 	</div>
 </div>
-<PageSection title="Test">Testing new section.</PageSection>
-<div class="flex h-screen overflow-auto p-2 align-bottom">
+<PageSection title="Test" reversedDirection={true}>Testing new section.</PageSection>
+<div
+	class="flex h-screen overflow-auto p-2 align-bottom"
+	use:viewport
+	on:enterViewport={() => console.log('enter!')}
+	on:exitViewport={() => console.log('exit!')}
+>
 	<h1
-		class="inline font-inter text-6xl uppercase text-stone-800 md:text-9xl"
+		class="inline -translate-x-full font-inter text-6xl uppercase text-stone-800 md:text-9xl"
 		style:transform={`translate3d(${scrollY > clientWidth ? 0 : -clientWidth + scrollY}px, 0, 0)`}
 		bind:clientWidth
 	>

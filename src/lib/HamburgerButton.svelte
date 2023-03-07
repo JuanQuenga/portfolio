@@ -5,7 +5,7 @@
 
 <button
 	type="button"
-	class="inline-flex items-center justify-center stroke-stone-800 p-2 text-gray-400 hover:bg-stone-800 hover:stroke-stone-100 hover:text-stone-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-stone-100"
+	class="inline-flex items-center justify-center stroke-stone-800 p-2 text-gray-400 hover:bg-stone-800 hover:stroke-orange-300 hover:text-orange-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-300"
 	aria-controls="mobile-menu"
 	aria-expanded="false"
 	on:click={onClick}
